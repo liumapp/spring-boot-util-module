@@ -5,6 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by liumapp on 9/28/17.
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
  * home-page:http://www.liumapp.com
  */
 @Configuration
-public class Config {
+public class UtilConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "liumapp.module.util")
