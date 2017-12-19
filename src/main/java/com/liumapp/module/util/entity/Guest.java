@@ -14,6 +14,16 @@ public class Guest {
 
     private String sex;
 
+    private String appKey;
+
+    public String getAppKey() {
+        return appKey;
+    }
+
+    public void setAppKey(String appKey) {
+        this.appKey = appKey;
+    }
+
     public void setSex(String sex) {
         this.sex = sex;
     }
@@ -28,9 +38,5 @@ public class Guest {
 
     public String getSex() {
         return sex;
-    }
-
-    public Guest(String sex) {
-        this.sex = sex;
     }
 }

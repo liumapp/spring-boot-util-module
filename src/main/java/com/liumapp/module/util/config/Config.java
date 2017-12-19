@@ -1,5 +1,8 @@
 package com.liumapp.module.util.config;
 
+import com.liumapp.module.util.entity.Guest;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
@@ -9,9 +12,20 @@ import org.springframework.context.annotation.ImportResource;
  * home-page:http://www.liumapp.com
  */
 @Configuration
-@ImportResource(locations = {"classpath:/spring/applicationContext*.xml"})
 public class Config {
 
+    @Bean
+    @ConfigurationProperties(prefix = "liumapp.module.util")
+    public UtilParams utilParams(){
+        UtilParams utilParams = new UtilParams();
+        return utilParams;
+    }
 
+    @Bean
+    public Guest guest(UtilParams utilParams) {
+        Guest guest = new Guest();
+        guest.setAppKey(utilParams.getAppKey());
+        return guest;
+    }
 
 }
